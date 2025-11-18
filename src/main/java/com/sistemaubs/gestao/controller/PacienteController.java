@@ -34,8 +34,14 @@ public class PacienteController {
     }
 
     @GetMapping("/{id}")
-    public Paciente pegarPacienteId(Long id){
+    public Paciente pegarPacienteId(@PathVariable Long id){
         return pacienteService.pegarPacienteId(id);
     }
+    @PutMapping("/{id}")
+    public Paciente editarPaciente(@PathVariable Long id, @RequestBody Paciente pacienteEditado){
+        return pacienteService.editarPaciente(id, pacienteEditado);
+
+    }
+
 }
 

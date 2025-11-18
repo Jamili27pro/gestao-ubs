@@ -1,10 +1,10 @@
 package com.sistemaubs.gestao.service;
 
-import Repository.PacienteRepository;
+
+import com.sistemaubs.gestao.Repository.PacienteRepository;
 import com.sistemaubs.gestao.model.Paciente;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,6 +33,10 @@ public class PacienteService {
     public Paciente pegarPacienteId(Long id){
         return pacienteRepository.pegarPacienteId(id);
 
+    }
+
+    public Paciente editarPaciente(Long id, Paciente pacienteEditado) {
+        return pacienteRepository.editarPaciente(id, pacienteEditado);
     }
 }
 
