@@ -18,7 +18,6 @@ public class JsonFileManager {
             throw new RuntimeException("Erro ao salvar arquivo JSON: " + caminho, e);
         }
     }
-
     public static <T> List<T> carregarLista(String caminho, Class<T> classe) {
         try {
             File arquivo = new File(caminho);
