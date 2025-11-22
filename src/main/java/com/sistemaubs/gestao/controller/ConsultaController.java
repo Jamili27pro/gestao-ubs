@@ -11,35 +11,35 @@ import java.util.List;
 @RequestMapping("/consultas")
 public class ConsultaController {
 
-    private final ConsultaService ConsultaService;
+    private final ConsultaService consultaService;
 
     @Autowired
     public ConsultaController(ConsultaService ConsultaService) {
-        this.ConsultaService = ConsultaService;
+        this.consultaService = ConsultaService;
     }
 
     @GetMapping
     public List<Consulta> listarConsultas() {
-        return ConsultaService.listarConsultas();
+        return consultaService.listarConsultas();
     }
 
     @PostMapping()
     public Consulta adicionarConsulta(@RequestBody Consulta Consulta) {
-        return ConsultaService.adicionarConsulta(Consulta);
+        return consultaService.adicionarConsulta(Consulta);
     }
 
     @DeleteMapping("/{id}")
     public void removerConsulta(@PathVariable Long id) {
-        ConsultaService.removerConsulta(id);
+        consultaService.removerConsulta(id);
     }
 
     @GetMapping("/{id}")
     public Consulta pegarConsultaId(@PathVariable Long id){
-        return ConsultaService.pegarConsultaId(id);
+        return consultaService.pegarConsultaId(id);
     }
     @PutMapping("/{id}")
     public Consulta editarConsulta(@PathVariable Long id, @RequestBody Consulta ConsultaEditado){
-        return ConsultaService.editarconsulta(id, ConsultaEditado);
+        return consultaService.editarConsulta(id, ConsultaEditado);
 
     }
 
